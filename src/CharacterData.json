@@ -1,0 +1,46 @@
+{
+    "mario": {
+        "image": "/player_icons/mario.png",
+        "name": "Mario"
+    },
+    "luigi": {
+        "image": "/player_icons/luigi.png",
+        "name": "Luigi"
+    },
+    "peach": {
+        "image": "/player_icons/peach.png",
+        "name": "Peach"
+    },
+    "daisy": {
+        "image": "/player_icons/daisy.png",
+        "name": "Daisy"
+    },
+    "wario": {
+        "image": "/player_icons/wario.png",
+        "name": "Wario"
+    },
+    "waluigi": {
+        "image": "/player_icons/waluigi.png",
+        "name": "Waluigi"
+    },
+    "toad": {
+        "image": "/player_icons/toad.png",
+        "name": "Toad"
+    },
+    "yoshi": {
+        "image": "/player_icons/yoshi.png",
+        "name": "Yoshi"
+    },
+    "boo": {
+        "image": "/player_icons/boo.png",
+        "name": "Boo"
+    },
+    "koopa_kid": {
+        "image": "/player_icons/koopa_kid.png",
+        "name": "Koopa Kid"
+    },
+    "toadette": {
+        "image": "/player_icons/toadette.png",
+        "name": "Toadette"
+    }
+}

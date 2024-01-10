@@ -1,0 +1,72 @@
+:root {
+    --circle-button-color: #aaa;
+    --circle-button-hover-color: #666;
+    --circle-button-press-color: #333;
+}
+
+@font-face {
+    font-family: 'Mario Party';
+    src: url('/Mario-Party-Hudson-Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.circle-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--circle-button-color);
+    cursor: pointer;
+    font-family: 'Mario Party', 'Courier New', Courier, monospace;
+    font-size: 20px;
+    position: relative;
+}
+
+.circle-button:hover {
+    background-color: var(--circle-button-hover-color);
+}
+
+.circle-button:active {
+    background-color: var(--circle-button-press-color);
+}
+
+.circle-button > p {
+    position: absolute;
+    top: -1px;
+    left: 5px;
+    margin: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.circle-button:hover > p {
+    color: #ddd;
+}
+
+.turn-indicator {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.turn-indicator > .inner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    top: 5px;
+    left: 5px;
+    background-color: white;
+}
+
+.turn-indicator > .inner > p {
+    position: absolute;
+    top: 0;
+    font-size: 24px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}

@@ -1,0 +1,116 @@
+{
+  "all_orbs": {
+    "": {
+      "name": "No Orb",
+      "image_loc": ""
+    },
+    "green": {
+      "name": "Unknown Green Orb",
+      "image_loc": "/orbs/green.png"
+    },
+    "blue": {
+      "name": "Unknown Blue Orb",
+      "image_loc": "/orbs/blue.png"
+    },
+    "yellow": {
+      "name": "Unknown Yellow Orb",
+      "image_loc": "/orbs/yellow.png"
+    },
+    "red": {
+      "name": "Unknown Red Orb",
+      "image_loc": "/orbs/red.png"
+    },
+    "mushroom": {
+      "name": "Mushroom Orb",
+      "image_loc": "/orbs/mushroom.png"
+    },
+    "gold_mushroom": {
+      "name": "Super 'Shroom Orb",
+      "image_loc": "/orbs/gold_mushroom.png"
+    },
+    "slug_mushroom": {
+      "name": "Sluggish 'Shroom Orb",
+      "image_loc": "/orbs/slug_mushroom.png"
+    },
+    "metal_mushroom": {
+      "name": "Metal Mushroom Orb",
+      "image_loc": "/orbs/metal_mushroom.png"
+    },
+    "bullet_bill": {
+      "name": "Bullet Bill Orb",
+      "image_loc": "/orbs/bullet_bill.png"
+    },
+    "warp_pipe": {
+      "name": "Warp Pipe Orb",
+      "image_loc": "/orbs/warp_pipe.png"
+    },
+    "flutter": {
+      "name": "Flutter Orb",
+      "image_loc": "/orbs/flutter.png"
+    },
+    "blizzard": {
+      "name": "Mr. Blizzard Orb",
+      "image_loc": "/orbs/blizzard.png"
+    },
+    "bob-omb": {
+      "name": "Bob-omb Orb",
+      "image_loc": "/orbs/bob-omb.png"
+    },
+    "boo-away": {
+      "name": "Boo-Away Orb",
+      "image_loc": "/orbs/boo-away.png"
+    },
+    "goomba": {
+      "name": "Goomba Orb",
+      "image_loc": "/orbs/goomba.png"
+    },
+    "kamek": {
+      "name": "Kamek Orb",
+      "image_loc": "/orbs/kamek.png"
+    },
+    "klepto": {
+      "name": "Klepto Orb",
+      "image_loc": "/orbs/klepto.png"
+    },
+    "koopa": {
+      "name": "Koopa Troopa Orb",
+      "image_loc": "/orbs/koopa.png"
+    },
+    "piranha": {
+      "name": "Piranha Plant Orb",
+      "image_loc": "/orbs/piranha.png"
+    },
+    "podoboo": {
+      "name": "Podoboo Orb",
+      "image_loc": "/orbs/podoboo.png"
+    },
+    "snack": {
+      "name": "Snack Orb",
+      "image_loc": "/orbs/snack.png"
+    },
+    "spiny": {
+      "name": "Spiny Orb",
+      "image_loc": "/orbs/spiny.png"
+    },
+    "thwomp": {
+      "name": "Thwomp Orb",
+      "image_loc": "/orbs/thwomp.png"
+    },
+    "toady": {
+      "name": "Toady Orb",
+      "image_loc": "/orbs/toady.png"
+    },
+    "tweester": {
+      "name": "Tweester Orb",
+      "image_loc": "/orbs/tweester.png"
+    },
+    "zap": {
+      "name": "Zap Orb",
+      "image_loc": "/orbs/zap.png"
+    }
+  },
+  "green": ["green", "mushroom", "gold_mushroom", "slug_mushroom", "metal_mushroom", "bullet_bill", "warp_pipe", "flutter"],
+  "blue": ["blue", "snack", "boo-away"],
+  "red": ["red", "podoboo", "zap", "tweester", "thwomp", "bob-omb", "koopa"],
+  "yellow": ["yellow", "spiny", "goomba", "piranha", "klepto", "toady", "kamek", "blizzard"]
+}

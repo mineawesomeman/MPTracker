@@ -1,0 +1,97 @@
+/* .flex-container {
+    display: flex;
+} */
+/* 
+.flex-container > div {
+    padding: 10px 10px 10px 10px
+} */
+
+@font-face {
+    font-family: 'Mario Party';
+    src: url('/Mario-Party-Hudson-Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+circle {
+    cursor: pointer;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.toggleholder {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+}
+
+.board {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+}
+
+.state {
+    right: 1%;
+    /* background-color: lightgreen; */
+}
+
+.players {
+    left: 1%;
+}
+
+.players > * {
+    position: relative;
+    height: 25%;
+}
+
+/* .p1 {
+    background-color: pink;
+}
+
+.p2 {
+    background-color: purple;
+}
+
+.p3 {
+    background-color: blue;
+}
+
+.p4 {
+    background-color: green;
+} */
+
+.sidebar {
+    top: 5%;
+    position: absolute;
+    width: 18%;
+    height: 90%;
+    padding: 0 5px 0 5px;
+}
+
+p {
+    font-family: 'Mario Party';
+    font-size: 20px;
+    margin: 0;
+}
+
+.turn-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.turn-select > * {
+    margin-right: 4px;
+    margin-left: 4px;
+    top: 30%;
+}
+
+.turn-select > p {
+    font-size: 48px;
+}

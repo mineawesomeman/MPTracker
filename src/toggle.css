@@ -1,0 +1,51 @@
+:root {
+    --toggle-button-size: 100px; /*overwrite this variable to change the size of the button!*/
+}
+
+.toggle {
+    height: var(--toggle-button-size);
+    width: calc(var(--toggle-button-size) * 2);
+    border-radius: calc(var(--toggle-button-size) / 2);
+    margin: auto;
+    background-color: lightgray;
+    position: relative;
+    cursor: pointer;
+}
+
+/* .toggle.on {
+    add stuff 
+} */
+
+.notch {
+    width: var(--toggle-button-size);
+    height: var(--toggle-button-size);
+    border-radius: 50% 0 0 50%;
+    background: #555555;
+    position: absolute;
+    box-shadow: 0 0 5px grey;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.on > .notch {
+    transform: translateX(var(--toggle-button-size));
+    border-radius: 0 50% 50% 0;
+}
+
+.lefticon {
+    width: calc(var(--toggle-button-size) * 0.75);
+    height: calc(var(--toggle-button-size) * 0.75);
+    position: absolute;
+    left: calc(var(--toggle-button-size) / 8);
+    top: calc(var(--toggle-button-size) / 10);
+    z-index: 2;
+}
+
+.righticon {
+    width: calc(var(--toggle-button-size) * 0.75);
+    height: calc(var(--toggle-button-size) * 0.75);
+    position: absolute;
+    right: calc(var(--toggle-button-size) / 8);
+    top: calc(var(--toggle-button-size) / 10);
+    z-index: 2;
+}
