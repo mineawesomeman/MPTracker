@@ -13,7 +13,7 @@
     font-style: normal;
 }
 
-circle {
+circle.space-icon {
     cursor: pointer;
 }
 
@@ -94,4 +94,239 @@ p {
 
 .turn-select > p {
     font-size: 48px;
+}
+
+.space-display {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background-color: gray;
+    border: 3px black solid;
+    border-radius: 10px;
+    z-index: 5;
+}
+
+.space-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.space-display-title {
+    display: inline-flex;
+    justify-content: left;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px 8px 0 0; /* only god knows why this is 8px but .player-select is 10px lmao */
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    height: 30px;
+}
+
+.space-display-title > p {
+    font-size: 24px;
+}
+
+.space-display-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.space-display-close:hover {
+    background-color: darkred;
+}
+
+.space-display-space-info {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2%;
+    height: 40%;
+    margin-top: 10px;
+}
+
+.space-display-space-info > svg > g > circle.space-icon {
+    cursor: default;
+}
+
+.space-display-space-info > svg > g > g.icon {
+    cursor: default;
+}
+
+.space-display-space-info > svg {
+    margin-left: 2%;
+    width: 15%;
+}
+
+.space-display-space-info > div {
+    width: 80%;
+}
+
+.space-display-orb-info {
+    display: flex;
+    height: 40%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    gap: 2%;
+}
+
+.space-display-orb-select {
+    width: 15%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: left;
+    align-items: center;
+}
+
+.space-display-orb-description {
+    width: 80%;
+    
+}
+
+.orb-owner-select {
+    display: inline-grid;
+    margin-left: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.orb-owner-select > *{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.orb-owner {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.orb-owner-option {
+    display: inherit;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    z-index: -1;
+    transform: translate(0px, 0px) scale(0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.orb-owner:hover {
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(50%);
+}
+
+.orb-owner:active {
+    -webkit-filter:brightness(25%);
+    -moz-filter:brightness(25%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(25%);
+}
+
+.orb-owner-option:hover {
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(50%);
+}
+
+.orb-owner-option:active {
+    -webkit-filter:brightness(25%);
+    -moz-filter:brightness(25%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(25%);
+}
+
+.orb-owner-option.oo2 {
+    display: inherit;
+    z-index: 1;
+    box-shadow: 0 0 5px gray;
+    transform: translate(-35px, 35px);
+}
+
+.orb-owner-option.oo1 {
+    display: inherit;
+    z-index: 1;
+    box-shadow: 0 0 5px gray;
+    transform: translate(-35px, -35px);
+}
+
+.orb-owner-option.oo4 {
+    display: inherit;
+    z-index: 1;
+    box-shadow: 0 0 5px gray;
+    transform: translate(35px, 35px);
+}
+
+.orb-owner-option.oo3 {
+    display: inherit;
+    z-index: 1;
+    box-shadow: 0 0 5px gray;
+    transform: translate(35px, -35px);
+}
+
+.space-display-debug {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.space-star-icon {
+    cursor: pointer;
+}
+
+.move-select-options {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.move-select > p {
+    font-size: 2vw;
+}
+
+.move-select-options > img {
+    cursor: pointer;
+}
+
+.move-select-options > img:hover {
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(50%);
+}
+
+.move-select-options > img:active {
+    -webkit-filter:brightness(25%);
+    -moz-filter:brightness(25%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(25%);
+}
+
+.player-board-icon {
+    cursor: pointer;
+}
+
+.move-select-slection.selected {
+    background: rgba(0, 127, 0, 0.5);
 }

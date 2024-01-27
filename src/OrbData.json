@@ -2,111 +2,138 @@
   "all_orbs": {
     "": {
       "name": "No Orb",
-      "image_loc": ""
+      "image_loc": "",
+      "description": "There is no orb on this space."
     },
     "green": {
       "name": "Unknown Green Orb",
-      "image_loc": "/orbs/green.png"
+      "image_loc": "/orbs/green.png",
+      "description": "This is an unspecified Green Orb. It is some sort of item that the owner can use on themself."
     },
     "blue": {
       "name": "Unknown Blue Orb",
-      "image_loc": "/orbs/blue.png"
+      "image_loc": "/orbs/blue.png",
+      "description": "This is an unspecified Blue Orb. It is some sort of item that protects the owner from something."
     },
     "yellow": {
       "name": "Unknown Yellow Orb",
-      "image_loc": "/orbs/yellow.png"
+      "image_loc": "/orbs/yellow.png",
+      "description": "This is an unspecified Yellow Orb. It can be placed on the board, and something will happen to whomever lands on it."
     },
     "red": {
       "name": "Unknown Red Orb",
-      "image_loc": "/orbs/red.png"
+      "image_loc": "/orbs/red.png",
+      "description": "This is an unspecified Red Orb. It can be placed on the board, and something will happen to whomever passes or lands on it."
     },
     "mushroom": {
       "name": "Mushroom Orb",
-      "image_loc": "/orbs/mushroom.png"
+      "image_loc": "/orbs/mushroom.png",
+      "description": "When this orb is used, it will cause the player to roll two dice blocks instead of one. They will move the combined number of spaces."
     },
     "gold_mushroom": {
       "name": "Super 'Shroom Orb",
-      "image_loc": "/orbs/gold_mushroom.png"
+      "image_loc": "/orbs/gold_mushroom.png",
+      "description": "When this orb is used, it will cause the player to roll three dice blocks instead of one. They will move the combined number of spaces."
     },
     "slug_mushroom": {
       "name": "Sluggish 'Shroom Orb",
-      "image_loc": "/orbs/slug_mushroom.png"
+      "image_loc": "/orbs/slug_mushroom.png",
+      "description": "When this orb is used, it will cause the player to roll a dice block that goes in slow motion, allowing them to choose which number they get."
     },
     "metal_mushroom": {
       "name": "Metal Mushroom Orb",
-      "image_loc": "/orbs/metal_mushroom.png"
+      "image_loc": "/orbs/metal_mushroom.png",
+      "description": "When this orb is used, it will cause the player to turn into metal, avoiding the effects of any orb space that they pass or land on this turn."
     },
     "bullet_bill": {
       "name": "Bullet Bill Orb",
-      "image_loc": "/orbs/bullet_bill.png"
+      "image_loc": "/orbs/bullet_bill.png",
+      "description": "When this orb is used, it will cause the player to ride a bullet bill, stealing 20 coins from any other player that they pass this turn."
     },
     "warp_pipe": {
       "name": "Warp Pipe Orb",
-      "image_loc": "/orbs/warp_pipe.png"
+      "image_loc": "/orbs/warp_pipe.png",
+      "description": "When this orb is used, it will cause the player to spin a wheel with the other players on it. They will then switch places with whomever the wheel landed on."
     },
     "flutter": {
       "name": "Flutter Orb",
-      "image_loc": "/orbs/flutter.png"
+      "image_loc": "/orbs/flutter.png",
+      "description": "When this orb is used, it will cause the player to summon flutter, who will move the player to one space before the current star space."
     },
     "blizzard": {
       "name": "Mr. Blizzard Orb",
-      "image_loc": "/orbs/blizzard.png"
+      "image_loc": "/orbs/blizzard.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will lose all their orbs."
     },
     "bob-omb": {
       "name": "Bob-omb Orb",
-      "image_loc": "/orbs/bob-omb.png"
+      "image_loc": "/orbs/bob-omb.png",
+      "description": "This orb is placed on the board. When someone passes it, they will only move half as far as they were supposed to."
     },
     "boo-away": {
       "name": "Boo-Away Orb",
-      "image_loc": "/orbs/boo-away.png"
+      "image_loc": "/orbs/boo-away.png",
+      "description": "This orb cannot be used or placed. If someone attempts to steal from the orb holder with Boo, the steal will fail and the orb will be consumed."
     },
     "goomba": {
       "name": "Goomba Orb",
-      "image_loc": "/orbs/goomba.png"
+      "image_loc": "/orbs/goomba.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will roll a dice block to determine how many coins they give the orb placer."
     },
     "kamek": {
       "name": "Kamek Orb",
-      "image_loc": "/orbs/kamek.png"
+      "image_loc": "/orbs/kamek.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will give a random orb they placed on the board to the orb placer."
     },
     "klepto": {
       "name": "Klepto Orb",
-      "image_loc": "/orbs/klepto.png"
+      "image_loc": "/orbs/klepto.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will go back to the start."
     },
     "koopa": {
       "name": "Koopa Troopa Orb",
-      "image_loc": "/orbs/koopa.png"
+      "image_loc": "/orbs/koopa.png",
+      "description": "This orb is placed on the board. When someone passes it, they will switch places with the orb placer."
     },
     "piranha": {
       "name": "Piranha Plant Orb",
-      "image_loc": "/orbs/piranha.png"
+      "image_loc": "/orbs/piranha.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will give half their coins to the orb placer."
     },
     "podoboo": {
       "name": "Podoboo Orb",
-      "image_loc": "/orbs/podoboo.png"
+      "image_loc": "/orbs/podoboo.png",
+      "description": "This orb is placed on the board. When someone passes it, they will lose 10 coins."
     },
     "snack": {
       "name": "Snack Orb",
-      "image_loc": "/orbs/snack.png"
+      "image_loc": "/orbs/snack.png",
+      "description": "This orb cannot be used or placed. If a Chain Chomp tries to steal from the holder of this orb, the Chain Chomp will fail to steal from them, and the orb will be consumed."
     },
     "spiny": {
       "name": "Spiny Orb",
-      "image_loc": "/orbs/spiny.png"
+      "image_loc": "/orbs/spiny.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will lose 10 coins."
     },
     "thwomp": {
       "name": "Thwomp Orb",
-      "image_loc": "/orbs/thwomp.png"
+      "image_loc": "/orbs/thwomp.png",
+      "description": "This orb is placed on the board. When someone passes it, they will stop moving."
     },
     "toady": {
       "name": "Toady Orb",
-      "image_loc": "/orbs/toady.png"
+      "image_loc": "/orbs/toady.png",
+      "description": "This orb is placed on the board. When someone lands on it, that player will lose an orb."
     },
     "tweester": {
       "name": "Tweester Orb",
-      "image_loc": "/orbs/tweester.png"
+      "image_loc": "/orbs/tweester.png",
+      "description": "This orb is placed on the board. When someone passes it, they will be moved to a random space."
     },
     "zap": {
       "name": "Zap Orb",
-      "image_loc": "/orbs/zap.png"
+      "image_loc": "/orbs/zap.png",
+      "description": "This orb is placed on the board. When someone passes it, they will lose 5 coins for every additional space they move."
     }
   },
   "green": ["green", "mushroom", "gold_mushroom", "slug_mushroom", "metal_mushroom", "bullet_bill", "warp_pipe", "flutter"],

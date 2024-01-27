@@ -16,6 +16,23 @@ export function BonusStarTracker({star, bData}) {
         newScores[pnum] = newNum;
         setScores(newScores);
     }
+
+    const isWinning = (pnum) => {
+        let winNum = -1;
+        let topNum = 0;
+        for (let i = 0; i < 4; i++) {
+            if (scores[i] > winNum) {
+                winNum = scores[i];
+                topNum = 1;
+            } else if (scores[i] == winNum) {
+                topNum ++;
+            }
+        }
+        
+        if (topNum == 4) return false;
+
+        return scores[pnum] >= winNum;
+    }
     
     let img_link = "";
     let name = "";
@@ -41,25 +58,25 @@ export function BonusStarTracker({star, bData}) {
             <div className='bonus-star-name'>
                 <p>{name}</p>
             </div>
-            <div className='bonus-star-tracker p1'>
+            <div className={'bonus-star-tracker p1' + (isWinning(0) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player1.character].image}/>
                 <SubButton pnum={0} star={star} updateScore={updateScore} />
                 <p style={{width: (5 + (10*(String(scores[0]).length))) + "px"}}>{scores[0]}</p>
                 <PlusButton pnum={0} star={star} updateScore={updateScore} />
             </div>
-            <div className='bonus-star-tracker p2'>
+            <div className={'bonus-star-tracker p2' + (isWinning(1) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player2.character].image}/>
                 <SubButton pnum={1} star={star} updateScore={updateScore} />
                 <p style={{width: (5 + (10*(String(scores[1]).length))) + "px"}}>{scores[1]}</p>
                 <PlusButton pnum={1} star={star} updateScore={updateScore} />
             </div>
-            <div className='bonus-star-tracker p3'>
+            <div className={'bonus-star-tracker p3' + (isWinning(2) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player3.character].image}/>
                 <SubButton pnum={2} star={star} updateScore={updateScore} />
                 <p style={{width: (5 + (10*(String(scores[2]).length))) + "px"}}>{scores[2]}</p>
                 <PlusButton pnum={2} star={star} updateScore={updateScore} />
             </div>
-            <div className='bonus-star-tracker p4'>
+            <div className={'bonus-star-tracker p4' + (isWinning(3) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player4.character].image}/>
                 <SubButton pnum={3} star={star} updateScore={updateScore} />
                 <p style={{width: (5 + (10*(String(scores[3]).length))) + "px"}}>{scores[3]}</p>

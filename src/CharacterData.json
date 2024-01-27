@@ -1,46 +1,57 @@
 {
     "mario": {
         "image": "/player_icons/mario.png",
-        "name": "Mario"
+        "name": "Mario",
+        "emblem": "/emblems/mario.png"
     },
     "luigi": {
         "image": "/player_icons/luigi.png",
-        "name": "Luigi"
+        "name": "Luigi",
+        "emblem": "/emblems/luigi.png"
     },
     "peach": {
         "image": "/player_icons/peach.png",
-        "name": "Peach"
+        "name": "Peach",
+        "emblem": "/emblems/peach.png"
     },
     "daisy": {
         "image": "/player_icons/daisy.png",
-        "name": "Daisy"
+        "name": "Daisy",
+        "emblem": "/emblems/daisy.png"
     },
     "wario": {
         "image": "/player_icons/wario.png",
-        "name": "Wario"
+        "name": "Wario",
+        "emblem": "/emblems/wario.png"
     },
     "waluigi": {
         "image": "/player_icons/waluigi.png",
-        "name": "Waluigi"
+        "name": "Waluigi",
+        "emblem": "/emblems/waluigi.png"
     },
     "toad": {
         "image": "/player_icons/toad.png",
-        "name": "Toad"
-    },
-    "yoshi": {
-        "image": "/player_icons/yoshi.png",
-        "name": "Yoshi"
-    },
-    "boo": {
-        "image": "/player_icons/boo.png",
-        "name": "Boo"
-    },
-    "koopa_kid": {
-        "image": "/player_icons/koopa_kid.png",
-        "name": "Koopa Kid"
+        "name": "Toad",
+        "emblem": "/emblems/toad.png"
     },
     "toadette": {
         "image": "/player_icons/toadette.png",
-        "name": "Toadette"
+        "name": "Toadette",
+        "emblem": "/emblems/toadette.png"
+    },
+    "yoshi": {
+        "image": "/player_icons/yoshi.png",
+        "name": "Yoshi",
+        "emblem": "/emblems/yoshi.png"
+    },
+    "boo": {
+        "image": "/player_icons/boo.png",
+        "name": "Boo",
+        "emblem": "/emblems/boo.png"
+    },
+    "koopa_kid": {
+        "image": "/player_icons/koopa_kid.png",
+        "name": "Koopa Kid",
+        "emblem": "/emblems/koopa_kid.png"
     }
 }

@@ -98,7 +98,8 @@
             "id": 15,
             "type": "happening",
             "x": 1058,
-            "y": 874
+            "y": 874,
+            "description": "Happening Space event: the Fluff Airline, where players choose a dandelion that will take them to another part of the board."
         },
         {
             "id": 16,
@@ -116,19 +117,22 @@
             "id": 18,
             "type": "happening",
             "x": 1264,
-            "y": 875
+            "y": 875,
+            "description": "Happening Space event: Bees attacking players that can deduct coins."
         },
         {
             "id": 19,
             "type": "happening",
             "x": 1324,
-            "y": 864
+            "y": 864,
+            "description": "Happening Space event: Bees attacking players that can deduct coins."
         },
         {
             "id": 20,
             "type": "happening",
             "x": 1378,
-            "y": 891
+            "y": 891,
+            "description": "Happening Space event: Bees attacking players that can deduct coins."
         },
         {
             "id": 21,
@@ -158,7 +162,8 @@
             "id": 25,
             "type": "happening",
             "x": 1265,
-            "y": 1301
+            "y": 1301,
+            "description": "Happening Space event: players make the tree sneeze to make other players fall off."
         },
         {
             "id": 26,
@@ -380,7 +385,8 @@
             "id": 62,
             "type": "happening",
             "x": 982,
-            "y": 279
+            "y": 279,
+            "description": "Happening Space event: In daytime, Woody gives coins to everyone. In nighttime, Evil Woody takes coins from everyone."
         },
         {
             "id": 63,
@@ -404,5 +410,10 @@
     "capsules": [],
     "shops": [],
     "junctions": [],
-    "boos": []
+    "boos": [],
+    "stars": [36, 12, 58, 64, 46, 22],
+    "start": {
+        "x": 1080,
+        "y": 1450
+    }
 }

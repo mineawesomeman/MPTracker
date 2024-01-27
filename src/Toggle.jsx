@@ -1,6 +1,6 @@
 import './toggle.css'
 
-export const Toggle = ({ size, toggled, onClick }) => {
+export const MapToggle = ({ size, toggled, onClick }) => {
     return (
         <div className={`toggle${toggled? " on" : ""}`} onClick={onClick} style={{
             "--toggle-button-size": size + "px"
@@ -14,6 +14,21 @@ export const Toggle = ({ size, toggled, onClick }) => {
             <div className='righticon'>
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke={toggled? "green" : "grey"} d="M18 11h-5V6h3l-4-4-4 4h3v5H6V8l-4 4 4 4v-3h5v5H8l4 4 4-4h-3v-5h5v3l4-4-4-4z"/>
+                </svg>
+            </div>
+        </div>
+    )
+}
+
+export function MapModeToggle({size, toggled, onClick, children}) {
+    return (
+        <div className={`toggle${toggled? " on" : ""}`} onClick={onClick} style={{
+            "--toggle-button-size": size + "px"
+        }}>
+            <div className='notch' />
+            <div className='righticon'>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    {children}
                 </svg>
             </div>
         </div>

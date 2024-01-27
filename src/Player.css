@@ -28,6 +28,7 @@
 .player-name {
     grid-row: 1;
     grid-column: 2;
+    justify-self: center;
 }
 
 .player-name > p {
@@ -36,6 +37,9 @@
 
 .player-stars {
     grid-row: 2;
+    justify-self: center;
+    display: flex;
+    gap: 5px;
 }
 
 .player-stars > p {
@@ -45,12 +49,17 @@
 
 .player-stars > img {
     height: 28px;
-    margin-right: 2px;
-    float: left;
+}
+
+.player-stars > .circle-button {
+    margin-top: 4px;
 }
 
 .player-coins {
     grid-row: 3;
+    justify-self: center;
+    display: flex;
+    gap: 5px;
 }
 
 .player-coins > p {
@@ -60,8 +69,10 @@
 
 .player-coins > img {
     height: 28px;
-    margin-right: 2px;
-    float: left;
+}
+
+.player-coins > .circle-button {
+    margin-top: 4px;
 }
 
 .player-orbs {
@@ -265,4 +276,17 @@
 
 .player-select-title > p {
     margin-left: 2px;
+}
+
+.player-options {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+}
+
+.player-options > .circle-button {
+    margin-top: 3px;
 }

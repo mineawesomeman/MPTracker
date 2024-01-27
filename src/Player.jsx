@@ -1,16 +1,20 @@
 import "./Player.css"
 import CharacterData from "./CharacterData.json"
 import OrbData from "./OrbData.json"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { CircleButton } from "./CircleButton";
 
-export function Player({num, bState, setBState}) {
+export function Player({num, bState, setBState, viewer, boardData, myref}) {
     const pdata = bState["player"+num];
-
     const charData = CharacterData[pdata.character];
     const [o1, setO1] = useState(false);
     const [o2, setO2] = useState(false);
     const [o3, setO3] = useState(false);
     const [pOpen, setPOpen] = useState(false);
+
+    useEffect(() => {
+        myref.current = () => {setPOpen(false)};
+    }, []);
 
     const o1Toggle = () => {
         if (o1) {
@@ -57,6 +61,40 @@ export function Player({num, bState, setBState}) {
         setPOpen(false);
     }
 
+    const updateStars = (diff) => {
+        let newBState = structuredClone(bState);
+        let newStars = newBState["player"+num].stars + diff;
+
+        if (newStars < 0) newStars = 0;
+        if (newStars > 999) newStars = 999;
+
+        newBState["player"+num].stars = newStars;
+        setBState(newBState);
+    }
+
+    const updateCoins = (diff) => {
+        let newBState = structuredClone(bState);
+        let newCoins = newBState["player"+num].coins + diff;
+
+        if (newCoins < 0) newCoins = 0;
+        if (newCoins > 999) newCoins = 999;
+
+        newBState["player"+num].coins = newCoins;
+        setBState(newBState);
+    }
+
+    const moveToPlayer = () => {
+        let xLoc = 950;
+        let yLoc = 1200;
+        if (pdata.location != -1) {
+            const spaceInfo = boardData.spaces[pdata.location];
+            xLoc = spaceInfo.x-150;
+            yLoc = spaceInfo.y-150;
+            
+        } 
+        viewer.current.fitSelection(xLoc, yLoc, 300, 300);
+    }
+
     return (
         <div className={"pbox p" + num}>
             <div className="player-image">
@@ -67,23 +105,35 @@ export function Player({num, bState, setBState}) {
                 <p>{charData.name}</p>
             </div>
             <div className="player-stars">
-                <img src="/ui/star.png"/><p>{pdata.stars}</p>
+                <CircleButton symbol="-" color="#a00" hoverColor="#900" pressColor="#600" onClick={() => {updateStars(-1)}}/>
+                <img src="/ui/star.png"/>
+                <p>{pdata.stars}</p>
+                <CircleButton symbol="+" color="#0a0" hoverColor="#090" pressColor="#060" onClick={() => {updateStars(1)}}/>
             </div>
             <div className="player-coins">
-                <img src="/ui/coin.png"/><p>{pdata.coins}</p>
+                <CircleButton symbol="10" color="#a00" hoverColor="#900" pressColor="#600" onClick={() => {updateCoins(-10)}}/>
+                <CircleButton symbol="1" color="#a00" hoverColor="#900" pressColor="#600" onClick={() => {updateCoins(-1)}}/>
+                <img src="/ui/coin.png"/>
+                <p>{pdata.coins}</p>
+                <CircleButton symbol="1" color="#0a0" hoverColor="#090" pressColor="#060" onClick={() => {updateCoins(1)}}/>
+                <CircleButton symbol="10" color="#0a0" hoverColor="#090" pressColor="#060" onClick={() => {updateCoins(10)}}/>
             </div>
             <div className="player-orbs">
                 <span>
-                    <OrbDisplay orb={pdata.orbs[0]} open={o1} onOpen={o1Toggle} position={0} setOrb={setOrb}/> 
-                    <OrbDisplay orb={pdata.orbs[1]} open={o2} onOpen={o2Toggle} position={1} setOrb={setOrb}/> 
-                    <OrbDisplay orb={pdata.orbs[2]} open={o3} onOpen={o3Toggle} position={2} setOrb={setOrb}/>
+                    <OrbDisplay orb={pdata.orbs[0]} open={o1} onOpen={o1Toggle} position={0} setOrb={setOrb} defaultPG="home"/> 
+                    <OrbDisplay orb={pdata.orbs[1]} open={o2} onOpen={o2Toggle} position={1} setOrb={setOrb} defaultPG="home"/> 
+                    <OrbDisplay orb={pdata.orbs[2]} open={o3} onOpen={o3Toggle} position={2} setOrb={setOrb} defaultPG="home"/>
                 </span>
+            </div>
+            <div className="player-options">
+                <p>View Location: </p>
+                <CircleButton symbol="" color="#FFBB33" hoverColor="#CC8800" pressColor="#805500" onClick={moveToPlayer} />
             </div>
         </div>
     )
 }
 
-function PlayerSelect({open, closeDisp, setPlayer}) {
+export function PlayerSelect({open, closeDisp, setPlayer}) {
 
     return (
         <div className="player-select" style={{display: (open ? "inline-block" : "none")}}>
@@ -110,9 +160,9 @@ function PlayerSelect({open, closeDisp, setPlayer}) {
     )
 }
 
-function OrbDisplay({orb, setOrb, open, onOpen, position}) {
+export function OrbDisplay({orb, setOrb, open, onOpen, position, defaultPG}) {
     const [menu, setMenu] = useState({
-        submenu: "home",
+        submenu: defaultPG,
         page: 1
     });
 
@@ -121,7 +171,7 @@ function OrbDisplay({orb, setOrb, open, onOpen, position}) {
     const toggleMenu = () => {
         onOpen();
         setTimeout(() => {setMenu({
-            submenu: "home",
+            submenu: defaultPG,
             page: 1
         })}, 300);
     }
@@ -203,6 +253,23 @@ function OrbDisplay({orb, setOrb, open, onOpen, position}) {
             element: (<img src={OrbData.all_orbs[orb4].image_loc} alt={OrbData.all_orbs[orb4].name}/>),
             action: () => {changeAndClose(orb4)}
         };
+    } else if (menu.submenu == "home2") {
+        elem2 = {
+            element: (<p className="close-orb-menu">X</p>),
+            action: () => {toggleMenu()}
+        };
+        elem3 = {
+            element: (<img src={OrbData.all_orbs.yellow.image_loc} alt={OrbData.all_orbs.yellow.name}/>),
+            action: () => {setMenu({submenu: "yellow", page: 0})}
+        };
+        elem5 = {
+            element: (<img src={OrbData.all_orbs.red.image_loc} alt={OrbData.all_orbs.red.name}/>),
+            action: () => {setMenu({submenu: "red", page: 0})}
+        };
+        elem6 = {
+            element: (<>{/**this is empty intentionally*/}</>),
+            action: () => {changeAndClose("")}
+        };
     }
 
     return (
@@ -212,7 +279,7 @@ function OrbDisplay({orb, setOrb, open, onOpen, position}) {
                     {mainImage != "" && <img src={mainImage} alt={OrbData.all_orbs[orb].name}/>}
                 </div>
             </div>
-            <div className={"orb-selection" + ((open && menu.submenu != "blue") ? " os1" : "")} onClick={elem1.action}>
+            <div className={"orb-selection" + ((open && menu.submenu != "blue" && menu.submenu != "home2") ? " os1" : "")} onClick={elem1.action}>
                 <div>
                     {elem1.element}
                 </div>
@@ -227,7 +294,7 @@ function OrbDisplay({orb, setOrb, open, onOpen, position}) {
                     {elem3.element}
                 </div>
             </div>
-            <div className={"orb-selection" + ((open && menu.submenu != "blue") ? " os4" : "")} onClick={elem4.action}>
+            <div className={"orb-selection" + ((open && menu.submenu != "blue" && menu.submenu != "home2") ? " os4" : "")} onClick={elem4.action}>
                 <div>
                     {elem4.element}
                 </div>
