@@ -2,6 +2,7 @@ import express from  'express'
 import ViteExpress from 'vite-express'
 
 const app = express()
+//comment this line out to run in dev
 ViteExpress.config({ mode: "production" })
 
 let helloCount = 0;

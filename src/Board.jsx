@@ -139,7 +139,7 @@ export default function Board(props) {
             const nextStarID = (boardState.star_in_order + 1) % boardState.star_order.length;
             const currentStar = boardState.star_order[boardState.star_in_order];
 
-            console.log(`spaceid: ${spaceID}, nextStar: ${currentStar}`)
+            // console.log(`spaceid: ${spaceID}, nextStar: ${currentStar}`)
             if (spaceID != currentStar) {
                 return;
             }
@@ -165,17 +165,17 @@ export default function Board(props) {
             } 
 
             if (newStars.unused.length == 0) {
-                console.log("switching to mode 2")
+                // console.log("switching to mode 2")
                 newStars.unused = [boardState.star_order[0]]
             }
         }
 
-        console.log(`star order: ${star_order}`);
-        console.log(`star in order: ${star_in_order}`)
-        console.log(`new star unused: ${newStars.unused}`)
-        console.log(`new stars current: ${newStars.current}`)
-        console.log(`new stars used: ${newStars.used}`)
-        console.log("---------------")
+        // console.log(`star order: ${star_order}`);
+        // console.log(`star in order: ${star_in_order}`)
+        // console.log(`new star unused: ${newStars.unused}`)
+        // console.log(`new stars current: ${newStars.current}`)
+        // console.log(`new stars used: ${newStars.used}`)
+        // console.log("---------------")
         setBoardState({...boardState, stars: newStars, star_in_order: star_in_order, star_order: star_order});
     }
 
