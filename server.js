@@ -2,6 +2,7 @@ import express from  'express'
 import ViteExpress from 'vite-express'
 
 const app = express()
+ViteExpress.config({ mode: "production" })
 
 let helloCount = 0;
 const allowedUsers = [
