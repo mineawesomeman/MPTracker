@@ -1,9 +1,9 @@
 .bonus-star {
     display: grid;
-    grid-template-columns: 64px auto auto;
+    grid-template-columns: 6.9039913700108vh auto auto;
     grid-template-rows: 1fr auto auto;
-    column-gap: 5px;
-    row-gap: 5px;
+    column-gap: 0.26vw;
+    row-gap: .54vh;
 }
 
 .bonus-icon {
@@ -42,21 +42,22 @@
 }
 
 .bonus-star-tracker > img {
-    width: 30px;
-    height: 30px;
+    width: 1.56vw;
+    height: 1.56vw;
     float: left;
 }
 
 .bonus-star-tracker > * {
     /* top: 5px; */
-    margin-left: 2px;
+    margin-left: .1vw;
 }
 
-.bonus-star-tracker > p {
-    width: 15px;
+.bonus-star-tracker-amt > p {
+    /* width: 1.7vw; */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    font-size: 1.5vw;
 }
 
 .bonus-star-tracker {
@@ -65,12 +66,12 @@
 }
 
 .stacked-num-buttons > * {
-    margin-bottom: 2px;
+    margin-bottom: .21vh;
 }
 
 .bonus-icon > svg {
-    width: 64px;
-    height: 64px;
+    width: 3.33vw;
+    height: 3.33vw;
 }
 
 .bonus-star-winner {

@@ -61,29 +61,41 @@ export function BonusStarTracker({star, bData}) {
             <div className={'bonus-star-tracker p1' + (isWinning(0) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player1.character].image}/>
                 <SubButton pnum={0} star={star} updateScore={updateScore} />
-                <p style={{width: (5 + (10*(String(scores[0]).length))) + "px"}}>{scores[0]}</p>
+                <div className='bonus-star-tracker-amt'>
+                    <p>{scores[0]}</p>
+                </div>
                 <PlusButton pnum={0} star={star} updateScore={updateScore} />
             </div>
             <div className={'bonus-star-tracker p2' + (isWinning(1) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player2.character].image}/>
                 <SubButton pnum={1} star={star} updateScore={updateScore} />
-                <p style={{width: (5 + (10*(String(scores[1]).length))) + "px"}}>{scores[1]}</p>
+                <div className='bonus-star-tracker-amt'>
+                    <p>{scores[1]}</p>
+                </div>
                 <PlusButton pnum={1} star={star} updateScore={updateScore} />
             </div>
             <div className={'bonus-star-tracker p3' + (isWinning(2) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player3.character].image}/>
                 <SubButton pnum={2} star={star} updateScore={updateScore} />
-                <p style={{width: (5 + (10*(String(scores[2]).length))) + "px"}}>{scores[2]}</p>
+                <div className='bonus-star-tracker-amt'>
+                    <p>{scores[2]}</p>
+                </div>
                 <PlusButton pnum={2} star={star} updateScore={updateScore} />
             </div>
             <div className={'bonus-star-tracker p4' + (isWinning(3) ? " bonus-star-winner" : "")}>
                 <img src={CharacterData[bData.player4.character].image}/>
                 <SubButton pnum={3} star={star} updateScore={updateScore} />
-                <p style={{width: (5 + (10*(String(scores[3]).length))) + "px"}}>{scores[3]}</p>
+                <div className='bonus-star-tracker-amt'>
+                    <p>{scores[3]}</p>
+                </div>
                 <PlusButton pnum={3} star={star} updateScore={updateScore} />
             </div>
         </div>
     )
+}
+
+function calcWidth(num) {
+    return (.4 + (.75*(String(num).length))) + "vw";
 }
 
 function SubButton({pnum, updateScore, star}) {

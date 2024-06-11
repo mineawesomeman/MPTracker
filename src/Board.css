@@ -1,11 +1,3 @@
-/* .flex-container {
-    display: flex;
-} */
-/* 
-.flex-container > div {
-    padding: 10px 10px 10px 10px
-} */
-
 @font-face {
     font-family: 'Mario Party';
     src: url('/Mario-Party-Hudson-Font.ttf') format('truetype');
@@ -23,8 +15,8 @@ circle.space-icon {
 
 .toggleholder {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 0.52vw;
+    top: 1vh;
     z-index: 1;
 }
 
@@ -48,33 +40,17 @@ circle.space-icon {
     height: 25%;
 }
 
-/* .p1 {
-    background-color: pink;
-}
-
-.p2 {
-    background-color: purple;
-}
-
-.p3 {
-    background-color: blue;
-}
-
-.p4 {
-    background-color: green;
-} */
-
 .sidebar {
     top: 5%;
     position: absolute;
     width: 18%;
     height: 90%;
-    padding: 0 5px 0 5px;
+    padding: 0 0.26vw 0 0.26vw;
 }
 
 p {
     font-family: 'Mario Party';
-    font-size: 20px;
+    font-size: min(1.04vw, 2.1vh);
     margin: 0;
 }
 
@@ -87,13 +63,13 @@ p {
 }
 
 .turn-select > * {
-    margin-right: 4px;
-    margin-left: 4px;
+    margin-right: 0.21vw;
+    margin-left: 0.21vw;
     top: 30%;
 }
 
 .turn-select > p {
-    font-size: 48px;
+    font-size: min(2.5vw, 5vh);
 }
 
 .space-display {
@@ -103,8 +79,8 @@ p {
     width: 60%;
     height: 60%;
     background-color: gray;
-    border: 3px black solid;
-    border-radius: 10px;
+    border: 0.16vw black solid;
+    border-radius: 5%;
     z-index: 5;
 }
 
@@ -123,25 +99,25 @@ p {
     justify-content: left;
     width: 100%;
     background-color: white;
-    border-radius: 8px 8px 0 0; /* only god knows why this is 8px but .player-select is 10px lmao */
-    margin-bottom: 2px;
-    padding-bottom: 2px;
-    height: 30px;
+    border-radius: 0.42vw 0.42vw 0 0;
+    margin-bottom: 0.2vh;
+    padding-bottom: 0.2vh;
+    height: 3.2vh;
 }
 
 .space-display-title > p {
-    font-size: 24px;
+    font-size: min(1.75vw, 2.5vh);
 }
 
 .space-display-close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: min(0.26vw, .5vh);
+    right: min(0.26vw, .5vh);
     width: 15px;
     height: 15px;
     background-color: red;
     cursor: pointer;
-    border: 2px solid black;
+    border: 0.1vw solid black;
     border-radius: 50%;
 }
 
@@ -155,7 +131,7 @@ p {
     align-content: center;
     gap: 2%;
     height: 40%;
-    margin-top: 10px;
+    margin-top: 1vh;
 }
 
 .space-display-space-info > svg > g > circle.space-icon {
@@ -189,7 +165,7 @@ p {
     margin-left: 2%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2vh;
     justify-content: left;
     align-items: center;
 }
@@ -201,7 +177,7 @@ p {
 
 .orb-owner-select {
     display: inline-grid;
-    margin-left: 5px;
+    margin-left: 0.260416667vw;
     justify-items: center;
     align-items: center;
 }
@@ -212,17 +188,17 @@ p {
 }
 
 .orb-owner {
-    width: 60px;
-    height: 60px;
+    width: min(3.125vw, 6.5vh);
+    height: min(3.125vw, 6.5vh);
     cursor: pointer;
 }
 
 .orb-owner-option {
     display: inherit;
     position: relative;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
+    height: min(2vw, 4vh);
+    width: min(2vw, 4vh);
+    border-radius: 50%;
     z-index: -1;
     transform: translate(0px, 0px) scale(0.1);
     transition: all 0.3s ease;
@@ -298,11 +274,11 @@ p {
 .move-select-options {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 0.260416667vw;
 }
 
 .move-select > p {
-    font-size: 2vw;
+    font-size: min(1.88vw, 3.45vh);
 }
 
 .move-select-options > img {
@@ -329,4 +305,22 @@ p {
 
 .move-select-slection.selected {
     background: rgba(0, 127, 0, 0.5);
+}
+
+.map-modes {
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.map-sliders {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.map-modes > p {
+    font-size: min(1.88vw, 3.45vh);
 }

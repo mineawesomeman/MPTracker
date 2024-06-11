@@ -1,9 +1,12 @@
 import './toggle.css'
 
 export const MapToggle = ({ size, toggled, onClick }) => {
+    let vh = 100 * (size / 927);
+    let vw = 100 * (size / 1920);
+
     return (
         <div className={`toggle${toggled? " on" : ""}`} onClick={onClick} style={{
-            "--toggle-button-size": size + "px"
+            "--toggle-button-size": `min(${vh}vh, ${vw}vw)`
         }}>
             <div className='notch' />
             <div className='lefticon'>
@@ -21,15 +24,15 @@ export const MapToggle = ({ size, toggled, onClick }) => {
 }
 
 export function MapModeToggle({size, toggled, onClick, children}) {
+    let vh = 100 * (size / 927);
+    let vw = 100 * (size / 1920);
     return (
         <div className={`toggle${toggled? " on" : ""}`} onClick={onClick} style={{
-            "--toggle-button-size": size + "px"
+            "--toggle-button-size": `min(${vh}vh, ${vw}vw)`
         }}>
             <div className='notch' />
             <div className='righticon'>
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    {children}
-                </svg>
+                {children}
             </div>
         </div>
     )

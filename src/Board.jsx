@@ -2,14 +2,15 @@ import "./Board.css";
 import React, {useRef, useEffect, useState} from 'react';
 import {INITIAL_VALUE, ReactSVGPanZoom, TOOL_PAN, TOOL_NONE} from 'react-svg-pan-zoom';
 import { useWindowSize } from "@react-hook/window-size";
-import { MapToggle } from "./Toggle";
+import { MapModeToggle, MapToggle } from "./Toggle";
 import { BowserIcon, ChanceIcon, DKIcon, DuelIcon, HappeningIcon } from "./Icons";
 import { CircleButton, TurnIndicator } from "./CircleButton.jsx"
 import { Player, OrbDisplay } from "./Player.jsx";
 import { BonusStarTracker } from "./BonusStarTracker.jsx";
 import CharacterData from "./CharacterData.json"
 import OrbData from "./OrbData.json"
-import TTSneeze from "./TTSneeze.jsx";
+import {TTSneeze, TTSneezeIcon} from "./TTSneeze.jsx";
+import {TTFluff, TTFluffIcon} from "./TTFluff.jsx";
 
 export default function Board(props) {
     const board_data = props.board_data;
@@ -59,7 +60,9 @@ export default function Board(props) {
             unused: board_data.stars,
             current: -1,
             used: []
-        }
+        },
+        star_order: [],
+        star_in_order: 0
     });
     const [spaceDisplayOpen, setSpaceDisplayOpen] = useState(false);
     const [spaceDisplayLoc, setSpaceDisplayLoc] = useState(null);
@@ -128,24 +131,52 @@ export default function Board(props) {
 
     const updateStar = (spaceID) => {
         let newStars = structuredClone(boardState.stars);
+        let star_order = structuredClone(boardState.star_order);
+        let star_in_order = 0;
+        
 
-        if (boardState.stars.unused.includes(spaceID)) {
-            if (boardState.stars.current != -1) {
-                newStars.used.push(boardState.stars.current);
+        if (boardState.star_order.length >= board_data.stars.length) {
+            const nextStarID = (boardState.star_in_order + 1) % boardState.star_order.length;
+            const currentStar = boardState.star_order[boardState.star_in_order];
+
+            console.log(`spaceid: ${spaceID}, nextStar: ${currentStar}`)
+            if (spaceID != currentStar) {
+                return;
             }
-            newStars.current = spaceID;
-            newStars.unused = newStars.unused.filter((a) => a != spaceID);
-        } else if (boardState.stars.current == spaceID) {
-            newStars.used.push(spaceID);
-            newStars.current = -1;
-        } 
 
-        if (newStars.unused.length == 0) {
-            newStars.unused = newStars.used;
-            newStars.used = [];
+            newStars.current = currentStar;
+            
+            newStars.used = star_order.filter((a) => a != boardState.star_order[boardState.star_in_order] && a != boardState.star_order[nextStarID]);
+            star_in_order = nextStarID
+            newStars.unused = [star_order[nextStarID]]
+        } else {
+
+            if (boardState.stars.unused.includes(spaceID)) {
+                if (boardState.stars.current != -1) {
+                    newStars.used.push(boardState.stars.current);
+                }
+                newStars.current = spaceID;
+                newStars.unused = newStars.unused.filter((a) => a != spaceID);
+                star_order.push(spaceID);
+
+            } else if (boardState.stars.current == spaceID) {
+                newStars.used.push(spaceID);
+                newStars.current = -1;
+            } 
+
+            if (newStars.unused.length == 0) {
+                console.log("switching to mode 2")
+                newStars.unused = [boardState.star_order[0]]
+            }
         }
 
-        setBoardState({...boardState, stars: newStars});
+        console.log(`star order: ${star_order}`);
+        console.log(`star in order: ${star_in_order}`)
+        console.log(`new star unused: ${newStars.unused}`)
+        console.log(`new stars current: ${newStars.current}`)
+        console.log(`new stars used: ${newStars.used}`)
+        console.log("---------------")
+        setBoardState({...boardState, stars: newStars, star_in_order: star_in_order, star_order: star_order});
     }
 
     const openSpaceDisplay = (sp) => {
@@ -224,6 +255,22 @@ export default function Board(props) {
         }
     }
 
+    const toggleTTSneeze = () => {
+        if (overlayDisplay == 1) {
+            setOverlayDisplay(0);
+        } else {
+            setOverlayDisplay(1);
+        }
+    }
+
+    const toggleFluff = () => {
+        if (overlayDisplay == 2) {
+            setOverlayDisplay(0);
+        } else {
+            setOverlayDisplay(2);
+        }
+    }
+
     return (
         <div className="flex-container" tabIndex={0} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp}>
             <div className="sidebar players">
@@ -275,6 +322,7 @@ export default function Board(props) {
                             );
                         })}
                         {overlayDisplay == 1 && <TTSneeze />}
+                        {overlayDisplay == 2 && <TTFluff />}
                         <PlayerBoardDisp player={1} boardState={boardState} boardData={board_data} playerMoveMode={playerMoveMode} setPlayerMoveMode={setPlayerMoveMode} openSpaceDisplay={openSpaceDisplayFromNum} keyRef={shiftPressed} />
                         <PlayerBoardDisp player={2} boardState={boardState} boardData={board_data} playerMoveMode={playerMoveMode} setPlayerMoveMode={setPlayerMoveMode} openSpaceDisplay={openSpaceDisplayFromNum} keyRef={shiftPressed} />
                         <PlayerBoardDisp player={3} boardState={boardState} boardData={board_data} playerMoveMode={playerMoveMode} setPlayerMoveMode={setPlayerMoveMode} openSpaceDisplay={openSpaceDisplayFromNum} keyRef={shiftPressed} />
@@ -311,7 +359,19 @@ export default function Board(props) {
                         </div>
                 </div>
                 <div className="map-modes">
-                    
+                    <p>Happening Views</p>
+                    <div className="map-sliders">
+                        <MapModeToggle size={50} toggled={overlayDisplay == 1} onClick={toggleTTSneeze}>
+                            <TTSneezeIcon triggered={overlayDisplay == 1} />
+                        </MapModeToggle>
+                        <MapModeToggle size={50} toggled={overlayDisplay == 2} onClick={toggleFluff}>
+                            <TTFluffIcon triggered={overlayDisplay == 2} />
+                        </MapModeToggle>
+                    </div>
+                </div>
+                <div>
+                    <p>Width: {window.innerWidth}</p>
+                    <p>Height: {window.innerHeight}</p>
                 </div>
             </div>
         </div>

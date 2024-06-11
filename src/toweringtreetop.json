@@ -99,7 +99,7 @@
             "type": "happening",
             "x": 1058,
             "y": 874,
-            "description": "Happening Space event: the Fluff Airline, where players choose a dandelion that will take them to another part of the board."
+            "description": "Happening Space event: If accepted, the player will choose a fluff which will send them to one of four random spaces. Use the Happening View trigger to see which spaces the player can travel to."
         },
         {
             "id": 16,
@@ -163,7 +163,7 @@
             "type": "happening",
             "x": 1265,
             "y": 1301,
-            "description": "Happening Space event: players make the tree sneeze to make other players fall off."
+            "description": "Happening Space event: Have a chance to cause the tree to sneeze, making all players fall to a lower space. Use the Happening Views trigger to see which space each player will fall to."
         },
         {
             "id": 26,

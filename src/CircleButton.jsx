@@ -1,7 +1,7 @@
 import "./CircleButton.css"
 
 export function CircleButton({symbol, color, hoverColor, pressColor, onClick}) {
-    let leftVal = "5px";
+    let leftVal = ".26vw";
 
     if (String(symbol).length == 2) {
         leftVal = "0px";
@@ -14,7 +14,7 @@ export function CircleButton({symbol, color, hoverColor, pressColor, onClick}) {
                 "--circle-button-hover-color": hoverColor,
                 "--circle-button-press-color": pressColor
             }}>
-                <p style={{fontSize: "18px", left: leftVal}}>{symbol}</p>
+                <p style={{left: leftVal}}>{symbol}</p>
         </div>
     )
 }
