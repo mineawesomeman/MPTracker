@@ -1,6 +1,6 @@
 # MPTracker
 
-Welcome to the repository for MPTracker. This is a tool to help track the gamestates of Mario Party to allow for optimal play. If you are not a developer, you are in the wrong place. Use the tracker [http://mpt.davidrosenstein.me](here)! Do not use any git tools to try and access the beta or you will be blocked.
+Welcome to the repository for MPTracker. This is a tool to help track the gamestates of Mario Party to allow for optimal play. If you are not a developer, you are in the wrong place. Use the tracker [here](http://mpt.davidrosenstein.me)! Do not use any git tools to try and access the beta or you will be blocked.
 
 ## Bug Reporting
 
