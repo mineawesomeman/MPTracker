@@ -25,3 +25,6 @@ dist-ssr
 
 # Don't leak your damn API codes
 .env
+
+# Or your users accounts
+accounts.json
