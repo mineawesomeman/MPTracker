@@ -19,7 +19,7 @@ function App() {
 
     const checkAccess = async function() {
         try {
-            const resp = await fetch("http://localhost:3000/user-validation", {
+            const resp = await fetch("/user-validation", {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -50,7 +50,7 @@ function App() {
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.error('Login Failed:', error),
-        redirect_uri: "https://localhost:3000/home"
+        redirect_uri: "https://mpt.davidrosenstein.me/home"
     });
     const logOut = () => {
         googleLogout();
