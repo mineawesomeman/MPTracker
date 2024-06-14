@@ -1,10 +1,14 @@
 import express from  'express'
 import ViteExpress from 'vite-express'
+import fs from 'fs'
 
 const app = express()
 //set this to false if dev
 const PRODUCTION = true
 let PORT = 3000
+
+//load accounts file
+const ACCOUNTS = JSON.parse(fs.readFileSync('accounts.json', 'utf8'));
 
 if (PRODUCTION) {
     ViteExpress.config({ mode: "production" })
@@ -12,9 +16,8 @@ if (PRODUCTION) {
 }
 
 let helloCount = 0;
-const allowedUsers = [
-    "102735845349975296276"
-]
+const allowedUsers = ACCOUNTS.accounts
+console.log(allowedUsers)
 
 app.use( express.json() )
 
