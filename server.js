@@ -2,8 +2,14 @@ import express from  'express'
 import ViteExpress from 'vite-express'
 
 const app = express()
-//comment this line out to run in dev
-ViteExpress.config({ mode: "production" })
+//set this to false if dev
+const PRODUCTION = true
+let PORT = 3000
+
+if (PRODUCTION) {
+    ViteExpress.config({ mode: "production" })
+    PORT = 80
+}
 
 let helloCount = 0;
 const allowedUsers = [
@@ -33,4 +39,4 @@ app.get('/hello', (req, res) => {
     })
 })
 
-ViteExpress.listen( app, 3000 )
+ViteExpress.listen( app, PORT )
